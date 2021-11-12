@@ -15,28 +15,28 @@ class Ingredient
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private integer $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $quantity;
+    private float $quantity;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $unity;
+    private string $unity;
 
     /**
      * @ORM\ManyToOne(targetEntity="Recipe", inversedBy="ingredients")
      * @ORM\JoinColumn(nullable=true, onDelete="CASCADE")
      */
-    private $recipe;
+    private Recipe $recipe;
 
     public function getId(): ?int
     {

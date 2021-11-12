@@ -17,27 +17,27 @@ class Recipe
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private integer $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private string $title;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private string $text;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $publicationDate;
+    private \DateTime $publicationDate;
 
     /**
      * @ORM\OneToMany(targetEntity="Ingredient", mappedBy="recipe")
      */
-    private $ingredients;
+    private Collection $ingredients;
 
     public function __construct()
     {
